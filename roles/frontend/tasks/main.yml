@@ -2,3 +2,9 @@
   ansible.builtin.yum:
     name: nginx
     state: installed
+
+    # Let's download the HTDOCS content and deploy under the Nginx path.
+    # curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip"
+- name: Download and Extract Frontend
+  get_url:
+    url: curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip"
