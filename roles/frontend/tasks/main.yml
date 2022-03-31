@@ -7,9 +7,12 @@
         state: installed
 
 - name: Download and Extract Frontend
-  get_url:
-    url: curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip"
-
+  ansible.builtin.unarchive:
+    src: https://github.com/roboshop-devops-project/frontend/archive/main.zip
+    dest: /tmp
+    remote_src: yes
+- name: Ansible delete file wildcard example
+  shell: rm -rf /usr/share/nginx/html/*
 
 
 
