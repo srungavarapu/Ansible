@@ -1,17 +1,13 @@
-- name: Install Nginx
-  hosts: all
-  tasks:
-    - name: Install NGINX
-      ansible.builtin.yum:
-        name: nginx
-        state: installed
-  tasks:
-    - name: Download and Extract Nginx
-      ansible.builtin.unarchive:
-        src: https://github.com/roboshop-devops-project/frontend/archive/main.zip
-        dest: /tmp
-        remote_src: yes
+- name: Install NGINX
+  ansible.builtin.yum:
+    name: nginx
+    state: installed
 
+- name: Download and Extract Nginx
+  ansible.builtin.unarchive:
+    src: https://github.com/roboshop-devops-project/frontend/archive/main.zip
+    dest: /tmp
+    remote_src: yes
 
 
 
