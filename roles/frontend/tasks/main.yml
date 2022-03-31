@@ -1,21 +1,35 @@
-- name: Install Nginx
-  hosts: all
-  tasks:
-    - name: Install NGINX
-      ansible.builtin.yum:
-        name: nginx
-        state: installed
+- name: Install NGINX
+  ansible.builtin.yum:
+    name: nginx
+    state: installed
 
 - name: Download and Extract Frontend
   ansible.builtin.unarchive:
     src: https://github.com/roboshop-devops-project/frontend/archive/main.zip
     dest: /tmp
     remote_src: yes
+
 - name: Ansible delete file wildcard example
   shell: rm -rf /usr/share/nginx/html/*
 
 
 
+
+
+  Deploy in Nginx Default Location.
+  
+  ```
+  # cd /usr/share/nginx/html
+  # rm -rf *
+  # unzip /tmp/frontend.zip
+  # mv frontend-main/* .
+  # mv static/* .
+  # rm -rf frontend-main README.md
+  # mv localhost.conf /etc/nginx/default.d/roboshop.conf
+  
+  ```
+  
+  Finally restart the service once to effect the changes.
 
 
 
