@@ -1,6 +1,6 @@
-- name: Install Nginx
-  hosts: all
-  tasks:
+#- name: Install Nginx
+#  hosts: all
+#  tasks:
     - name: Install NGINX
       ansible.builtin.yum:
         name: nginx
