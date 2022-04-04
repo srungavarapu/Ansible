@@ -2,4 +2,3 @@
   ansible.builtin.yum:
     name: nginx
     state: installed
-
