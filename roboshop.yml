@@ -1,4 +1,4 @@
-- name: play on role
+- name: Roboshop playbook on role
   hosts: all
   roles:
     - frontend
