@@ -38,5 +38,4 @@
     name: nginx
     state: installed
 
-- name: Download and Extract Frontend
 
